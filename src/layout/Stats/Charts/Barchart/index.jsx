@@ -5,11 +5,18 @@ import useGradient from "../useGradient";
 
 
 //TODO: extract to hooks or chunks, to make it smaller
+/**
+ * dynamic bar chart
+ *
+ * @param {*} props
+ * @returns
+ */
 const BarChart = (props) => {
     let { data = [], shortenYnumber = false, xLabel, yLabel, barColor = null, barGradient = ['#00d8fb', '#2e2f7e'], header = '' } = props;
     let svgRef = useRef(null);
     let [lgd, setSvgEl] = useGradient({ svg: svgRef.current, stop1: barGradient[0], stop2: barGradient[1] });
 
+    // memoized dimensions
     let dim = useMemo(() => {
         return {
             w: 800,
@@ -18,6 +25,11 @@ const BarChart = (props) => {
         }
     }, []);
 
+    /**
+     * draw grid behind bars
+     *
+     * @param {*} { svg, data: dta, yAxis, yScale, xAxis, xScale, dim: dimen }
+     */
     let drawGrid = ({ svg, data: dta, yAxis, yScale, xAxis, xScale, dim: dimen }) => {
         // Gridline
         let ygrid = yAxis
@@ -71,6 +83,13 @@ const BarChart = (props) => {
             .style("z-index", 0);
     };
 
+
+    /**
+     *
+     * create actual chart
+     * @param {*} currentRef
+     * @returns
+     */
     let createChart = useCallback((currentRef) => {
         if (!currentRef) return;
         // parent width & height for svg viewbox
