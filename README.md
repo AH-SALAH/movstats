@@ -3,7 +3,7 @@
  <img width=200px height=200px src="/public/android-chrome-192x192.png" alt="Project logo"></a>
 </p>
 
-<h3 align="center">movstats</h3>
+<h3 align="center">Movstats</h3>
 
 <div align="center">
 
@@ -16,7 +16,7 @@
 
 ---
 
-<p align="center"> Movie DB demo assessment. 
+<p align="center"> Movie DB stats demo assessment.
     <br> 
 </p>
 
@@ -32,13 +32,13 @@
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
 
-## 🧐 About <a name = "about"></a>
+!!!### 🧐 About <a name = "about"></a>
 
 This is a demo assessment by creating a website utilizing the moviedb api.
 By adding functionalities like search, sort, rate, Using react, redux, scss.
 Using d3js to demo the stats & get some stats for movies.
 
-## 🏁 Getting Started <a name = "getting_started"></a>
+### 🏁 Getting Started <a name = "getting_started"></a>
 
 #### Structure
 ```
@@ -115,7 +115,7 @@ Using d3js to demo the stats & get some stats for movies.
 
 ```
 
-### Tech Used
+!!!### Tech Used
 
 This project using:
 
@@ -127,9 +127,9 @@ This project using:
 ✔ D3js
 
 
-### Installing
+!!!### Installing
 
-- install yarn then
+- clone repo & cd to it's folder & install yarn then
 ```
 yarn install
 
@@ -143,32 +143,36 @@ yarn start
 
 
 
-## 🚀 Deployment <a name = "deployment"></a>
+!!!### 🚀 Deployment <a name = "deployment"></a>
 
-It can be deployed any wheres staticly as there is no ssr used.
+It can be deployed any where staticly as there is no ssr used.
+deployed on vercel <a href="https://movstats.vercel.app/">App</a>
 
 
-## ✍️ Authors <a name = "authors"></a>
+
+##### ✍️ Authors <a name = "authors"></a>
 
 - [@AH-SALAH](https://github.com/AH_SALAH)
 
 
-## 🎉 Acknowledgements <a name = "acknowledgement"></a>
+!!!## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
-blocks had been met through.
+Challenges had been met through.
 
-- getting charts do its drawing correctly from the first time.
+- getting charts do its drawing correctly from the first time. 
 - dealing  with redux toolkit new syntax.
 
 #### 🎈  Enhancement proposed <a name = "acknowledgement"></a>
 
 may as TODO
 - Add persistant to the redux store\
-or may use reactQuery/swr to utilize the cache their cache mechanizm.
+or may use reactQuery/swr to utilize their cache mechanizm.
 - Change the carousel auto scroll functionality to normal to enhance perf in details page.
 - maybe converting to typescript.
 - Add some tests.
-- it's a demo assess but maybe UI enhancement.
+- it's a demo assess but sure UI enhancement.
 - dockerizing the app.
+
+*commits had been forgotten to be done frequently through this demo.
 
 Thank you.
