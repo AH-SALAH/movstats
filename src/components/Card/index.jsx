@@ -9,7 +9,7 @@ import { slugify } from '@/utils/slugify';
 import { formatedDate } from '@/utils/formatDate';
 
 const Card = ({ data, w, h }) => {
-    let { id, title, poster_path, release_date, vote_average, overview, popularity } = data;
+    let { id, title, poster_path, release_date, vote_average } = data;
 
     return (
         <div id={id} className={`relative ${w || 'w-1/3 lg:w-1/6'} ${h}`}>
@@ -32,7 +32,6 @@ const Card = ({ data, w, h }) => {
 
                     <div className='px-4 shrink lg:group-hover:animate-slidedown lg:animate-slideup transition-transform z-0 md:-translate-y-full mb-4'>
                         <div className='bg-indigo-400 rounded-b-2xl shadow-xl px-2 py-1 text-white'>
-                            {/* <div className="genre line-clamp-2">{title}</div> */}
                             <time className="date flex place-items-start gap-2">
                                 <CalendarIcon width={15} height={15} />
                                 <small>{formatedDate(release_date)}</small>
