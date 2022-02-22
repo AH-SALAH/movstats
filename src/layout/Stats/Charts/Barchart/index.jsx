@@ -93,8 +93,8 @@ const BarChart = (props) => {
     let createChart = useCallback((currentRef) => {
         if (!currentRef) return;
         // parent width & height for svg viewbox
-        let w = d3.select(currentRef).node().getBoundingClientRect().width;
-        let h = d3.select(currentRef).node().getBoundingClientRect().height;
+        let w = d3.select(currentRef)?.node()?.getBoundingClientRect()?.width;
+        let h = d3.select(currentRef)?.node()?.getBoundingClientRect()?.height;
         // xaxis & yaxis values
         let dataV1 = v => Object.values(v)?.[0];
         let dataV2 = v => Object.values(v)?.[1];
@@ -104,7 +104,7 @@ const BarChart = (props) => {
         let svg = d3.select(currentRef)
             .attr('width', dim.w + dim.margin.left + dim.margin.right)
             .attr('height', dim.h + dim.margin.top + dim.margin.bottom)
-            .attr('viewbox', `0 0 ${h} ${w}`)
+            .attr('viewbox', `0 0 ${w} ${h}`)
             .style('overflow', 'visible')
             .append("g")
             .attr('transform', `translate(${dim.margin.left + dim.margin.right}, ${dim.margin.top})`)
