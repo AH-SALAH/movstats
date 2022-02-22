@@ -24,7 +24,7 @@
 <a href="https://movstats.vercel.app/">App</a>
 </p>
 
-## 📝 Table of Contents
+### 📝 Table of Contents
 
 - [About](#about)
 - [Getting Started](#getting_started)
@@ -32,7 +32,7 @@
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
 
-!!!### 🧐 About <a name = "about"></a>
+!!! ### 🧐 About <a name = "about"></a>
 
 This is a demo assessment by creating a website utilizing the moviedb api.
 By adding functionalities like search, sort, rate, Using react, redux, scss.
@@ -115,7 +115,7 @@ Using d3js to demo the stats & get some stats for movies.
 
 ```
 
-!!!### Tech Used
+!!! ### Tech Used
 
 This project using:
 
@@ -127,7 +127,7 @@ This project using:
 ✔ D3js
 
 
-!!!### Installing
+!!! ### Installing
 
 - clone repo & cd to it's folder & install yarn then
 ```
@@ -143,7 +143,7 @@ yarn start
 
 
 
-!!!### 🚀 Deployment <a name = "deployment"></a>
+!!! ### 🚀 Deployment <a name = "deployment"></a>
 
 It can be deployed any where staticly as there is no ssr used.
 deployed on vercel <a href="https://movstats.vercel.app/">App</a>
@@ -155,7 +155,7 @@ deployed on vercel <a href="https://movstats.vercel.app/">App</a>
 - [@AH-SALAH](https://github.com/AH_SALAH)
 
 
-!!!## 🎉 Acknowledgements <a name = "acknowledgement"></a>
+!!! ### 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
 Challenges had been met through.
 
