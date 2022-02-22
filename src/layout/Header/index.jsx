@@ -7,7 +7,6 @@ import { LoadingIcon } from '@/components/Skeletons/Loading';
 import ShimmerPlaceholder from '@/components/Skeletons/ShimmerPlaceholder';
 import { useSelector, useDispatch } from 'react-redux';
 import { searchAllMovies, setSearchValue } from '@/store/features/movies/moviesSlice';
-// import Wave from '/public/assets/images/wave.svg';
 
 const Header = ({ img = '', hasSearch = true, title = '' }) => {
     let [openSearch, setOpenSearch] = useState(false);
@@ -18,6 +17,7 @@ const Header = ({ img = '', hasSearch = true, title = '' }) => {
 
     let handleSubmit = async e => {
         e.preventDefault();
+        // if there is no value return
         if (!searchValue || searchValue.length === 1) return;
 
         dispatch(searchAllMovies({ searchValue }));

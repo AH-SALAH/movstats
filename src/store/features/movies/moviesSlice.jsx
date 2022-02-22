@@ -1,12 +1,13 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { getDetails, getPopular, searchMovie, sortMovie, rateMovie } from '@/data/movies';
+import { getTopRated, getDetails, getPopular, searchMovie, sortMovie, rateMovie } from '@/data/movies';
 
 let initialState = {
     loading: true,
     moviesData: [],
     movieDetails: {},
     searchValue: '',
-    rating: { loading: false }
+    rating: { loading: false },
+    top10: []
 };
 
 export const fetchAllMovies = createAsyncThunk('movies/fetchAllMovies', async (page) => {
@@ -26,6 +27,11 @@ export const searchAllMovies = createAsyncThunk('movies/searchAllMovies', async 
 
 export const sortAllMovies = createAsyncThunk('movies/sortAllMovies', async ({ sort_by, page }) => {
     let { data } = await sortMovie({ sort_by: sort_by, page });
+    return data;
+});
+
+export const fetchTop10 = createAsyncThunk('movies/fetchTop10', async () => {
+    let { data } = await getTopRated();
     return data;
 });
 
@@ -103,6 +109,18 @@ export const moviesSlice = createSlice({
         });
         builder.addCase(rateTheMovie.rejected, (state) => {
             state.rating.loading = false;
+        });
+
+        // sort top10 cases
+        builder.addCase(fetchTop10.pending, (state) => {
+            state.loading = true;
+        });
+        builder.addCase(fetchTop10.fulfilled, (state, { payload }) => {
+            state.top10 = payload?.results?.slice(0, 10);
+            state.loading = false;
+        });
+        builder.addCase(fetchTop10.rejected, (state) => {
+            state.loading = false;
         });
     },
 })
