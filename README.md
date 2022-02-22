@@ -31,13 +31,14 @@
 - [Deployment](#deployment)
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
-
-!!! ### 🧐 About <a name = "about"></a>
+---
+#### 🧐 About <a name = "about"></a>
 
 This is a demo assessment by creating a website utilizing the moviedb api.
 By adding functionalities like search, sort, rate, Using react, redux, scss.
 Using d3js to demo the stats & get some stats for movies.
 
+---
 ### 🏁 Getting Started <a name = "getting_started"></a>
 
 #### Structure
@@ -114,8 +115,8 @@ Using d3js to demo the stats & get some stats for movies.
     └── slugify.js
 
 ```
-
-!!! ### Tech Used
+---
+#### Tech Used
 
 This project using:
 
@@ -126,8 +127,8 @@ This project using:
 ✔ Redux-toolkit\
 ✔ D3js
 
-
-!!! ### Installing
+---
+#### Installing
 
 - clone repo & cd to it's folder & install yarn then
 ```
@@ -141,27 +142,27 @@ yarn build
 yarn start
 ```
 
+---
 
-
-!!! ### 🚀 Deployment <a name = "deployment"></a>
+#### 🚀 Deployment <a name = "deployment"></a>
 
 It can be deployed any where staticly as there is no ssr used.
 deployed on vercel <a href="https://movstats.vercel.app/">App</a>
 
-
+---
 
 ##### ✍️ Authors <a name = "authors"></a>
 
 - [@AH-SALAH](https://github.com/AH_SALAH)
 
-
-!!! ### 🎉 Acknowledgements <a name = "acknowledgement"></a>
+---
+#### 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
 Challenges had been met through.
 
 - getting charts do its drawing correctly from the first time. 
 - dealing  with redux toolkit new syntax.
-
+---
 #### 🎈  Enhancement proposed <a name = "acknowledgement"></a>
 
 may as TODO
@@ -173,6 +174,7 @@ or may use reactQuery/swr to utilize their cache mechanizm.
 - it's a demo assess but sure UI enhancement.
 - dockerizing the app.
 
+---
 *commits had been forgotten to be done frequently through this demo.
 
 Thank you.
