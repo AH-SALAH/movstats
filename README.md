@@ -151,9 +151,9 @@ yarn start
 ```
 
 -   Don't forget Create .env.local file with credentials with those env var.
-    ** NEXT_PUBLIC_SITENAME
-    ** NEXT_PUBLIC_MOVIEDB_APIKEY
-    ** NEXT_PUBLIC_MOVIEDB_BASEURL
+    ** NEXT_PUBLIC_SITENAME\
+    ** NEXT_PUBLIC_MOVIEDB_APIKEY\
+    ** NEXT_PUBLIC_MOVIEDB_BASEURL\
     ** NEXT_PUBLIC_MOVIEDB_BASEIMGURL
 
 ---
