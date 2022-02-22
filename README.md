@@ -37,6 +37,7 @@ Using d3js to demo the stats & get some stats for movies.
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
 #### Structure
+```
 .
 ├── components
 │   ├── Auth
@@ -108,7 +109,7 @@ Using d3js to demo the stats & get some stats for movies.
     ├── formatMins.js
     └── slugify.js
 
-
+```
 
 ### Tech Used
 
