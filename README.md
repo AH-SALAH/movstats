@@ -165,5 +165,6 @@ or may use reactQuery/swr to utilize the cache their cache mechanizm.
 - maybe converting to typescript.
 - Add some tests.
 - it's a demo assess but maybe UI enhancement.
+- dockerizing the app.
 
 Thank you.
