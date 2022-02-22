@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import cardStyle from './card.module.scss';
-import ShimmerPlaceholder from '@/components/skeletons/ShimmerPlaceholder';
+import ShimmerPlaceholder from '@/components/Skeletons/ShimmerPlaceholder';
 import Rate from 'rc-rate';
 import 'rc-rate/assets/index.css';
 import Link from 'next/link';

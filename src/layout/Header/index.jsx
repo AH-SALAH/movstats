@@ -4,7 +4,7 @@ import headerStyle from './header.module.scss';
 import SearchIcon from '@heroicons/react/outline/SearchIcon'
 import { useState } from 'react';
 import { LoadingIcon } from '@/components/Skeletons/Loading';
-import ShimmerPlaceholder from '@/components/skeletons/ShimmerPlaceholder';
+import ShimmerPlaceholder from '@/components/Skeletons/ShimmerPlaceholder';
 import { useSelector, useDispatch } from 'react-redux';
 import { searchAllMovies, setSearchValue } from '@/store/features/movies/moviesSlice';
 

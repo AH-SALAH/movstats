@@ -6,7 +6,7 @@ import headerStyle from '@/layout/Header/header.module.scss';
 import Slider from '@/components/Slider';
 import { useRouter } from 'next/router';
 import { useEffect, useCallback } from 'react';
-import ShimmerPlaceholder from '@/components/skeletons/ShimmerPlaceholder';
+import ShimmerPlaceholder from '@/components/Skeletons/ShimmerPlaceholder';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchMovieDetails } from '@/store/features/movies/moviesSlice';
 
