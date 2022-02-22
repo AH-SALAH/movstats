@@ -26,12 +26,14 @@
 
 ### 📝 Table of Contents
 
-- [About](#about)
-- [Getting Started](#getting_started)
-- [Deployment](#deployment)
-- [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
+-   [About](#about)
+-   [Getting Started](#getting_started)
+-   [Deployment](#deployment)
+-   [Authors](#authors)
+-   [Acknowledgments](#acknowledgement)
+
 ---
+
 #### 🧐 About <a name = "about"></a>
 
 This is a demo assessment by creating a website utilizing the moviedb api.
@@ -39,9 +41,11 @@ By adding functionalities like search, sort, rate, Using react, redux, scss.
 Using d3js to demo the stats & get some stats for movies.
 
 ---
+
 ### 🏁 Getting Started <a name = "getting_started"></a>
 
 #### Structure
+
 ```
 .
 ├── components
@@ -115,7 +119,9 @@ Using d3js to demo the stats & get some stats for movies.
     └── slugify.js
 
 ```
+
 ---
+
 #### Tech Used
 
 This project using:
@@ -128,9 +134,11 @@ This project using:
 ✔ D3js
 
 ---
+
 #### Installing
 
-- clone repo & cd to it's folder & install yarn then
+-   clone repo & cd to it's folder & install yarn then
+
 ```
 yarn install
 
@@ -141,6 +149,12 @@ yarn dev
 yarn build
 yarn start
 ```
+
+-   Don't forget Create .env.local file with credentials with those env var.
+    ** NEXT_PUBLIC_SITENAME
+    ** NEXT_PUBLIC_MOVIEDB_APIKEY
+    ** NEXT_PUBLIC_MOVIEDB_BASEURL
+    ** NEXT_PUBLIC_MOVIEDB_BASEIMGURL
 
 ---
 
@@ -153,28 +167,33 @@ deployed on vercel <a href="https://movstats.vercel.app/">App</a>
 
 ##### ✍️ Authors <a name = "authors"></a>
 
-- [@AH-SALAH](https://github.com/AH-SALAH)
+-   [@AH-SALAH](https://github.com/AH-SALAH)
 
 ---
+
 #### 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
 Challenges had been met through.
 
-- getting charts do its drawing correctly from the first time. 
-- dealing  with redux toolkit new syntax.
+-   getting charts do its drawing correctly from the first times.
+-   dealing with redux toolkit new syntax.
+
 ---
-#### 🎈  Enhancement proposed <a name = "acknowledgement"></a>
+
+#### 🎈 Enhancement proposed <a name = "acknowledgement"></a>
 
 may as TODO
-- Add persistant to the redux store\
-or may use reactQuery/swr to utilize their cache mechanizm.
-- Change the carousel auto scroll functionality to normal to enhance perf in details page.
-- maybe converting to typescript.
-- Add some tests.
-- it's a demo assess but sure UI enhancement.
-- dockerizing the app.
+
+-   Add persistant to the redux store\
+    or may use reactQuery/swr to utilize their cache mechanizm.
+-   Change the carousel auto scroll functionality to normal to enhance perf in details page.
+-   maybe converting to typescript.
+-   Add some tests.
+-   it's a demo assess but sure UI enhancement.
+-   dockerizing the app.
 
 ---
-*commits had been forgotten to be done frequently through this demo.
+
+\*commits had been forgotten to be done frequently through this demo.
 
 Thank you.
