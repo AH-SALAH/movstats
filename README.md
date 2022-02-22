@@ -16,8 +16,12 @@
 
 ---
 
-<p align="center"> Movie DB demo assessment.
+<p align="center"> Movie DB demo assessment. 
     <br> 
+</p>
+
+<p align="center" style="text-align: center;">
+<a href="https://movstats.vercel.app/">App</a>
 </p>
 
 ## 📝 Table of Contents
