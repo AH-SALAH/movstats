@@ -1,5 +1,5 @@
 import '../styles/global.scss';
-import Footer from '@/Layout/Footer';
+import Footer from '../layout/Footer';
 import { store } from '@/store';
 import { Provider } from 'react-redux';
 import GuestAuth from '@/components/Auth/useGuestAuth';
