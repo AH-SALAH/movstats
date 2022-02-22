@@ -7,7 +7,7 @@ import { LoadingIcon } from '@/components/Skeletons/Loading';
 import ShimmerPlaceholder from '@/components/Skeletons/ShimmerPlaceholder';
 import { useSelector, useDispatch } from 'react-redux';
 import { searchAllMovies, setSearchValue } from '@/store/features/movies/moviesSlice';
-
+// import Wave from '/public/assets/images/wave.svg';
 
 const Header = ({ img = '', hasSearch = true, title = '' }) => {
     let [openSearch, setOpenSearch] = useState(false);
@@ -96,6 +96,10 @@ const Header = ({ img = '', hasSearch = true, title = '' }) => {
                 </form>
                 ||
                 ''
+            }
+            {
+                <div style={{background: `url(${'/assets/images/wave.svg'}) no-repeat scroll center center/cover`}} className={`object-cover w-screen h-20 -bottom-3 left-0 right-0 absolute z-30 flex place-content-center place-items-center`}>
+                </div>
             }
         </header>
     )
