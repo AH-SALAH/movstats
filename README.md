@@ -115,11 +115,11 @@ Using d3js to demo the stats & get some stats for movies.
 
 This project using:
 
-✔ Nextjs - React
-✔ Tailwind - to use just it's css utilities instead of bootstrap
-✔ scss
-✔ Redux
-✔ Redux-toolkit
+✔ Nextjs - React\
+✔ Tailwind - to use just it's css utilities instead of bootstrap\
+✔ scss\
+✔ Redux\
+✔ Redux-toolkit\
 ✔ D3js
 
 
@@ -137,11 +137,6 @@ yarn build
 yarn start
 ```
 
-And repeat
-
-```
-until finished
-```
 
 
 ## 🚀 Deployment <a name = "deployment"></a>
