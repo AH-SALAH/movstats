@@ -42,7 +42,7 @@ const Sort = ({ mainDivRef }) => {
             <MenuPopover ReferenceEl={forwardRef(function RefElComp(props, ref) {
                 return (
                     <div className={`flex gap-2 relative ${selected && 'right-10' || ''}`}>
-                        <button title='Sort' ref={ref} className='order-2 rounded-full flex place-content-center place-items-center w-10 h-10 border-0 bg-zinc-100 shadow-lg hover:bg-zinc-300'>
+                        <button title='Sort' ref={ref} className='order-2 rounded-full flex place-content-center place-items-center w-10 h-10 border-0 text-white bg-indigo-400 shadow-lg hover:bg-indigo-500'>
                             <SortDescendingIcon width={20} height={20} />
                         </button>
                         {
@@ -76,7 +76,7 @@ const Sort = ({ mainDivRef }) => {
                                                     }
                                                        ${checked ? 'bg-indigo-400 bg-opacity-75 text-white' : 'bg-white'
                                                     }
-                                                        relative rounded-lg shadow-md px-5 py-4 cursor-pointer flex focus:outline-none`
+                                                        hover:bg-indigo-300 relative rounded-lg shadow-md px-5 py-4 cursor-pointer flex focus:outline-none`
                                                 }
                                             >
                                                 {({ active, checked }) => (
