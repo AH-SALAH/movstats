@@ -153,7 +153,7 @@ deployed on vercel <a href="https://movstats.vercel.app/">App</a>
 
 ##### ✍️ Authors <a name = "authors"></a>
 
-- [@AH-SALAH](https://github.com/AH_SALAH)
+- [@AH-SALAH](https://github.com/AH-SALAH)
 
 ---
 #### 🎉 Acknowledgements <a name = "acknowledgement"></a>
