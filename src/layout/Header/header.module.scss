@@ -1,0 +1,18 @@
+.main_overlay{
+    @apply absolute w-full top-0 bottom-0 left-0 right-0 bg-gradient-to-b bg-transparent opacity-100 z-10 from-black via-transparent to-indigo-900;
+}
+.right_overlay{
+    @apply absolute w-1/6 h-full top-0 right-0 bg-gradient-to-l bg-transparent opacity-50 z-20 from-black via-black to-transparent;
+}
+.left_overlay{
+    @apply absolute w-1/6 h-full top-0 left-0 bg-gradient-to-r bg-transparent opacity-50 z-20 from-black via-black to-transparent;
+}
+
+.transform_img{
+    transform: scale(1.7) skew(-10deg) rotateX(0deg) rotate3d(16, -8, 0, 45deg);
+    perspective-origin: center;
+}
+
+.inner_shadow{
+    box-shadow: inset 0px 0px 7px 5px rgba(0,0,0,0.3);
+}

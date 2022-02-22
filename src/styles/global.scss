@@ -1,0 +1,77 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+
+
+a {
+  @apply text-blue-700;
+}
+
+a:hover {
+  @apply border-b-2 border-blue-700;
+}
+
+// scrollbar
+/* width */
+*::-webkit-scrollbar {
+    width: 6px;
+}
+
+html, body{
+    transition: all 0.3s ease;
+}
+
+/* Track */
+*::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    display: none;
+}
+
+/* Handle */
+*::-webkit-scrollbar-thumb {
+    background   : #888;
+    border-radius: 8px;
+}
+
+/* Handle on hover */
+*::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+// pagination style
+nav{
+    &._2m9w7[aria-label=pagination]{
+        & li {
+            & a:hover{
+                @apply border-0;
+            }
+        }
+        & form{
+            display: none;
+        }
+    }
+}
+
+// rc-rate style
+.rc-rate{
+    & li{
+        @apply mr-[0.5px];
+    }
+}
+
+// stats styles
+svg{
+    & .bar{
+        transition: fill 0.3s ease;
+        filter: drop-shadow(0 10px 2px rgba(0,0,0,0.3));
+
+        &:hover{
+            fill: rgba(245, 147, 0, 0.3);
+        }
+    }
+}
