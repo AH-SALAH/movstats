@@ -10,7 +10,6 @@ import { searchAllMovies, setSearchValue } from '@/store/features/movies/moviesS
 
 
 const Header = ({ img = '', hasSearch = true, title = '' }) => {
-    // let [searchValue, setSearchValue] = useState('');
     let [openSearch, setOpenSearch] = useState(false);
     let loading = useSelector((state) => state.movies.loading);
     let searchValue = useSelector((state) => state.movies.searchValue);
@@ -21,7 +20,7 @@ const Header = ({ img = '', hasSearch = true, title = '' }) => {
         e.preventDefault();
         if (!searchValue || searchValue.length === 1) return;
 
-        dispatch(searchAllMovies({ searchValue}));
+        dispatch(searchAllMovies({ searchValue }));
 
     };
 
@@ -52,7 +51,7 @@ const Header = ({ img = '', hasSearch = true, title = '' }) => {
             <div className='relative w-full z-30'>
                 <Nav />
             </div>
-            <span className={headerStyle.main_overlay}></span>
+            <span className={`${headerStyle.main_overlay} ${headerStyle.animate_scaleClipOuter}`}></span>
             <span className={headerStyle.right_overlay}></span>
             <span className={headerStyle.left_overlay}></span>
             <Image
@@ -69,8 +68,22 @@ const Header = ({ img = '', hasSearch = true, title = '' }) => {
                 title && <h1>{title}</h1> || ''
             }
             {
+                <div className={`w-40 h-40 top-1/3 -translate-y-1/3 relative z-30 flex place-content-center place-items-center`}>
+                    <Image
+                        priority
+                        quality={90}
+                        src={img || '/android-chrome-192x192.png'}
+                        className={`object-cover opacity-80 ${headerStyle.animate_scaleClipInner}`}
+                        layout="fill"
+                        width={100}
+                        height={100}
+                        alt='header-logo'
+                    />
+                </div>
+            }
+            {
                 hasSearch &&
-                <form onSubmit={handleSubmit} className={`search flex place-self-center place-content-center place-items-center z-30 relative px-4 top-1/2 -translate-y-1/2 w-full lg:w-1/2`}>
+                <form onSubmit={handleSubmit} className={`search flex place-self-center place-content-center place-items-center z-30 relative px-4 top-1/3 -translate-y-1/3 w-full lg:w-1/2`}>
                     <label htmlFor="search-movies" className={`rounded-3xl w-full relative flex place-content-center place-items-center`}>
                         <input disabled={loading} onFocus={() => setOpenSearch(true)} onBlur={handleBlur} onChange={handleChange} type="text" name="search-movies" placeholder='Search movies...' className={`${loading ? 'h-0 py-[1px]' : ' py-3'} px-4 rounded-3xl border-0 outline-none transition-all ${searchValue || openSearch ? 'w-full' : 'w-1/2'} placeholder:text-zinc-800 disabled:bg-zinc-300 ${headerStyle.inner_shadow} shadow-2xl`} />
                         {

@@ -16,3 +16,23 @@
 .inner_shadow{
     box-shadow: inset 0px 0px 7px 5px rgba(0,0,0,0.3);
 }
+
+.animate_scaleClipOuter{
+    clip-path: circle(300px);
+    animation: scaleClipOuter 1.5s ease 1s forwards;
+}
+
+@keyframes scaleClipOuter {
+    from{clip-path: circle(300px);}
+    to{clip-path: circle(1600px);}
+}
+
+.animate_scaleClipInner{
+    clip-path: circle(50px);
+    animation: scaleClipInner 1.5s ease 1.5s forwards;
+}
+
+@keyframes scaleClipInner {
+    from{clip-path: circle(50px);}
+    to{clip-path: circle(600px);}
+}
