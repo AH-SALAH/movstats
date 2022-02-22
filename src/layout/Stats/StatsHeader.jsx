@@ -2,7 +2,7 @@ import Nav from '@/components/Nav';
 import Image from 'next/image';
 import headerStyle from '../Header/header.module.scss';
 import ChartBarIcon from '@heroicons/react/outline/ChartBarIcon';
-import ShimmerPlaceholder from '@/components/skeletons/ShimmerPlaceholder';
+import ShimmerPlaceholder from '@/components/Skeletons/ShimmerPlaceholder';
 
 const StatsHeader = () => {
     return (
