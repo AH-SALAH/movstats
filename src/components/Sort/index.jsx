@@ -74,7 +74,7 @@ const Sort = ({ mainDivRef }) => {
                                                         ? 'ring-2 ring-offset-2 ring-offset-sky-300 ring-white ring-opacity-60'
                                                         : ''
                                                     }
-                                                       ${checked ? 'bg-indigo-400 bg-opacity-75 text-white' : 'bg-white'
+                                                       ${checked ? 'bg-indigo-400 bg-opacity-75 text-white' : 'bg-zinc-300'
                                                     }
                                                         hover:bg-indigo-300 relative rounded-lg shadow-md px-5 py-4 cursor-pointer flex focus:outline-none`
                                                 }
