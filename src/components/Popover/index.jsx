@@ -29,7 +29,7 @@ const MenuPopover = ({ children, ReferenceEl }) => {
                                     className={'w-full h-full flex'}
                                 >
                                     <Popover.Panel
-                                        className="mt-5 bg-zinc-100 dark:bg-zinc-800 shadow-lg rounded-lg p-2 flex place-content-center place-items-start min-h-fit w-full min-w-[300px] z-10 border border-zinc-700"
+                                        className="mt-5 bg-zinc-100 dark:bg-zinc-800 shadow-lg rounded-lg p-2 flex place-content-center place-items-start min-h-fit w-full min-w-[300px] z-10 border border-zinc-300"
                                     >
                                         <Transition
                                             as={'span'}
