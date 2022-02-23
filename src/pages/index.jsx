@@ -17,21 +17,21 @@ const Index = () => {
     let mainDivRef = useRef(null);
 
     let popularMovies = useCallback(async (page, searchq) => {
-        // search with some sort of debounce
-        let stt = 0;
-        clearTimeout(stt);
-        stt = setTimeout(() => {
-            // if there is search query search by else get all movies
-            if (searchq) dispatch(searchAllMovies({ searchValue: searchq, page }));
-            else dispatch(fetchAllMovies(page));
-            if (page && window !== undefined) window?.scrollTo({ top: (mainDivRef?.current?.offsetTop - parseInt(window?.getComputedStyle(mainDivRef?.current, null).getPropertyValue('padding-top'))), behavior: 'smooth' });
-            clearTimeout(stt);
-        }, 850);
+        // if there is search query search by else get all movies
+        if (searchq) dispatch(searchAllMovies({ searchValue: searchq, page }));
+        else dispatch(fetchAllMovies(page));
+        if (page && window !== undefined) window?.scrollTo({ top: (mainDivRef?.current?.offsetTop - parseInt(window?.getComputedStyle(mainDivRef?.current, null).getPropertyValue('padding-top'))), behavior: 'smooth' });
     }, [dispatch]);
 
 
     useEffect(() => {
-        popularMovies(router?.query?.page, searchValue);
+        // search with some sort of debounce
+        let timeOut = 0;
+        clearTimeout(timeOut);
+        timeOut = setTimeout(() => {
+            popularMovies(router?.query?.page, searchValue);
+        }, 1200);
+        return () => clearTimeout(timeOut);
     }, [router?.query?.page, popularMovies, searchValue]);
 
 
@@ -54,12 +54,15 @@ const Index = () => {
                         ||
                         <>
                             {
+                                popular?.results && 
                                 popular?.results?.map(m => <Card key={m.id} data={m} />)
+                                ||
+                                <h3>No Results</h3>
                             }
                             {
                                 popular?.total_pages &&
-                                <div className='w-full flex place-content-center place-items-center'>
-                                    <PaginationC total={popular?.total_pages} size={null} />
+                                <div className='w-full flex place-content-center place-items-center gap-2 flex-wrap'>
+                                    <PaginationC total={popular?.total_results} /> <span>{popular?.total_results} - total results</span>
                                 </div>
                                 ||
                                 ''

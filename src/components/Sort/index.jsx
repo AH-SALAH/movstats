@@ -12,7 +12,7 @@ import { useRouter } from 'next/router';
 let sortOptions = [
     { "Sort by rate": "vote_average.desc" },
     { "Sort by release date": "release_date.desc" },
-    { "Sort by popularity": "popularity.desc" }
+    { "Sort by revenue": "revenue.desc" }
 ];
 
 const Sort = ({ mainDivRef }) => {
@@ -27,7 +27,15 @@ const Sort = ({ mainDivRef }) => {
     }, [dispatch, mainDivRef, selected]);
 
     useEffect(() => {
-        if (selected) handleSort(router?.query?.page);
+        let timeOut = 0;
+        if (selected) {
+            // debounce sort selections
+            clearTimeout(timeOut);
+            timeOut = setTimeout(() => {
+                handleSort(router?.query?.page);
+            }, 1000);
+        }
+        return () => clearTimeout(timeOut);
     }, [selected, handleSort, router?.query?.page]);
 
     let handleReset = () => {
