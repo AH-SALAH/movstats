@@ -20,32 +20,31 @@
 .animate_scaleClipOuter{
     clip-path: circle(300px);
     animation: scaleClipOuter 1.5s ease 1s forwards;
-}
-
-@keyframes scaleClipOuter {
-    from{clip-path: circle(300px);}
-    to{clip-path: circle(1600px);}
+    
+    @keyframes scaleClipOuter {
+        from{clip-path: circle(300px);}
+        to{clip-path: circle(1600px);}
+    }
 }
 
 .animate_scaleClipInner{
     clip-path: circle(50px);
     animation: scaleClipInner 1.5s ease 1.5s forwards;
+    
+    @keyframes scaleClipInner {
+        from{clip-path: circle(50px);}
+        to{clip-path: circle(600px);}
+    }
 }
-
-@keyframes scaleClipInner {
-    from{clip-path: circle(50px);}
-    to{clip-path: circle(600px);}
-}
-
 
 .animate_inifinte_scroll_with_op{
     background: url('/assets/images/mwp.jpg') repeat fixed left center/contain;
     animation: inifinteScroll 20s linear 2s infinite both;
+    
+    @keyframes inifinteScroll {
+        0%{background-position: 0 0;opacity: 0;}
+        5%{background-position: 44px 40px;opacity: 1;}
+        90%{background-position: 1200px 650px;opacity: 1;}
+        100%{background-position: 1244px 700px; opacity: 0;}
+    } 
 }
-
-@keyframes inifinteScroll {
-    0%{background-position: 0 0;opacity: 0;}
-    5%{background-position: 44px 40px;opacity: 1;}
-    90%{background-position: 1200px 650px;opacity: 1;}
-    100%{background-position: 1244px 700px; opacity: 0;}
-} 
