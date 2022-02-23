@@ -36,3 +36,19 @@
     from{clip-path: circle(50px);}
     to{clip-path: circle(600px);}
 }
+
+
+.animate_inifinte_scroll_with_op{
+    background: url('/assets/images/mwp.jpg') fixed center center/contain;
+    animation: infiniteScoll 5s linear infinite, op 1s ease 1s forwards;
+}
+
+@keyframes inifinteScroll {
+    from{background-position: 0% 0%}
+    to{background-position: 0% 100%}
+} 
+
+@keyframes op {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+} 

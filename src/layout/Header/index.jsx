@@ -48,6 +48,7 @@ const Header = ({ img = '', hasSearch = true, title = '' }) => {
 
     return (
         <header className={`relative w-full flex flex-col place-items-center min-h-[600px] h-[700px] overflow-hidden`}>
+            <div className={`z-10 transition-all absolute top-0 bottom-0 left-0 right-0 w-full h-full opacity-0 ${headerStyle.animate_inifinte_scroll_with_op}`}></div>
             <div className='relative w-full z-30'>
                 <Nav />
             </div>
@@ -60,7 +61,7 @@ const Header = ({ img = '', hasSearch = true, title = '' }) => {
                 priority
                 quality={90}
                 src={img || '/assets/images/mwp.jpg'}
-                className={`object-cover ${headerStyle.transform_img}`}
+                className={`z-0 transition-all object-cover`}
                 layout="fill"
                 alt='header-bg'
             />
