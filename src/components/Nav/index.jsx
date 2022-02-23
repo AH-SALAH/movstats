@@ -6,15 +6,15 @@ import ChartBarIcon from '@heroicons/react/outline/ChartBarIcon';
 
 const Nav = () => {
     return (
-        <div className="w-full flex place-content-start place-items-center px-14 py-5">
-            <div className="text-2xl font-bold text-zinc-100 mr-10 flex place-content-start place-items-center gap-2">
+        <div className="w-full flex place-content-center md:place-content-start place-items-center px-14 py-5 flex-wrap">
+            <div className="text-2xl font-bold text-zinc-100 md:mr-10 flex place-content-start place-items-center gap-2">
                 <Link href="/">
                     <a className="gap-2 text-zinc-100 border-none flex place-items-center">
                         <Image src={'/android-chrome-192x192.png'} width={50} height={50} alt={'logo'} layout={'fixed'} /> {AppConfig.title}
                     </a>
                 </Link>
             </div>
-            <ul className="flex flex-wrap text-lg place-content-center place-items-end">
+            <ul className="flex flex-wrap text-lg place-content-center place-items-end pt-6 md:pt-0 text-center">
                 <li className="mr-6">
                     <Link href="/">
                         <a className="text-zinc-100 hover:text-indigo-600 border-none flex place-items-center gap-1">

@@ -39,13 +39,15 @@
 
 
 .animate_inifinte_scroll_with_op{
-    background: url('/assets/images/mwp.jpg') fixed center center/contain;
-    animation: infiniteScoll 5s linear infinite, op 1s ease 1s forwards;
+    background: url('/assets/images/mwp.jpg') repeat fixed left center/contain;
+    animation: inifinteScroll 20s linear 2s infinite both;
 }
 
 @keyframes inifinteScroll {
-    from{background-position: 0% 0%}
-    to{background-position: 0% 100%}
+    0%{background-position: 0 0;opacity: 0;}
+    5%{background-position: 44px 40px;opacity: 1;}
+    90%{background-position: 1200px 650px;opacity: 1;}
+    100%{background-position: 1244px 700px; opacity: 0;}
 } 
 
 @keyframes op {
