@@ -30,19 +30,19 @@ const Header = ({ img = '', hasSearch = true, title = '' }) => {
     };
 
     let handleChange = e => {
-        if (e.target.value.length > 1) {
-            // search with some sort of debounce
-            let timeOut = 0;
-            clearTimeout(timeOut);
-            timeOut = setTimeout(() => {
-                dispatch(setSearchValue(e.target.value));
-                clearTimeout(timeOut);
-            }, 1200);
-
-        }
-        else {
+        // update store with empty value if there is no value or less than 2 char
+        if (!e.target.value || e.target.value.length < 2) {
             dispatch(setSearchValue(''));
+            return;
         }
+        // search with some sort of debounce
+        let timeOut = 0;
+        clearTimeout(timeOut);
+        timeOut = setTimeout(() => {
+            dispatch(setSearchValue(e.target.value));
+            clearTimeout(timeOut);
+        }, 1200);
+
     };
 
 
@@ -96,7 +96,7 @@ const Header = ({ img = '', hasSearch = true, title = '' }) => {
                 ''
             }
             {
-                <div style={{background: `url(${'/assets/images/wave.svg'}) no-repeat scroll center center/cover`}} className={`object-cover w-screen h-20 -bottom-3 left-0 right-0 absolute z-30 flex place-content-center place-items-center`}>
+                <div style={{ background: `url(${'/assets/images/wave.svg'}) no-repeat scroll center center/cover` }} className={`object-cover w-screen h-20 -bottom-3 left-0 right-0 absolute z-30 flex place-content-center place-items-center`}>
                 </div>
             }
         </header>
