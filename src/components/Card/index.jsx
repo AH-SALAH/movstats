@@ -8,7 +8,7 @@ import CalendarIcon from '@heroicons/react/outline/CalendarIcon';
 import { slugify } from '@/utils/slugify';
 import { formatedDate } from '@/utils/formatDate';
 
-const Card = ({ data, w, h }) => {
+const Card = ({ data, w, h='h-auto' }) => {
     let { id, title, poster_path, release_date, vote_average } = data;
 
     return (
