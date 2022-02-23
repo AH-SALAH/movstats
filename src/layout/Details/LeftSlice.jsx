@@ -20,7 +20,7 @@ import { useDispatch, useSelector } from 'react-redux';
 const LeftSlice = ({ data }) => {
     let router = useRouter();
     let [rated, setRated] = useState(false);
-    let { loading } = useSelector((state) => state.movies);
+    let loading = useSelector((state) => state.movies.loading);
     let [ratedNow, setRatedNow] = useState(false);
     let dispatch = useDispatch();
 
@@ -32,8 +32,9 @@ const LeftSlice = ({ data }) => {
 
     let handleRatedNow = () => {
         setRatedNow(true);
-        setTimeout(() => {
+        let timeOut = setTimeout(() => {
             setRatedNow(false);
+            clearTimeout(timeOut);
         }, 3000);
     };
 
@@ -124,7 +125,7 @@ const LeftSlice = ({ data }) => {
                     </div>
                     <div className='flex gap-3 place-items-center mb-5'>
                         <span className='text-lg text-white'>{data.vote_average}</span>
-                        <Rate allowHalf disabled={rated} value={data.vote_average * 5 / 10} onChange={handleRate} />
+                        <Rate allowHalf disabled={rated} value={data.vote_average * 5 / 10} style={{fontSize: '1.45rem'}} onChange={handleRate} />
                         {
                             !rated &&
                             <span className='text-white text-lg'>{'👈 Rate this movie'}</span>
