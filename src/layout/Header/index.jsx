@@ -32,12 +32,12 @@ const Header = ({ img = '', hasSearch = true, title = '' }) => {
     let handleChange = e => {
         if (e.target.value.length > 1) {
             // search with some sort of debounce
-            let stt = 0;
-            clearTimeout(stt);
-            stt = setTimeout(() => {
+            let timeOut = 0;
+            clearTimeout(timeOut);
+            timeOut = setTimeout(() => {
                 dispatch(setSearchValue(e.target.value));
-                clearTimeout(stt);
-            }, 700);
+                clearTimeout(timeOut);
+            }, 1200);
 
         }
         else {
@@ -75,8 +75,6 @@ const Header = ({ img = '', hasSearch = true, title = '' }) => {
                         src={img || '/android-chrome-192x192.png'}
                         className={`object-cover opacity-80 ${headerStyle.animate_scaleClipInner}`}
                         layout="fill"
-                        width={100}
-                        height={100}
                         alt='header-logo'
                     />
                 </div>
