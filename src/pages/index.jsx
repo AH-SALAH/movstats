@@ -9,6 +9,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchAllMovies, searchAllMovies } from '../store/features/movies/moviesSlice';
 import Loading from "@/components/Skeletons/Loading";
 import Sort from '@/components/Sort';
+import { formatCurrency } from '@/utils/formatCurrency';
 
 const Index = () => {
     let router = useRouter();
@@ -34,7 +35,7 @@ const Index = () => {
         return () => clearTimeout(timeOut);
     }, [router?.query?.page, popularMovies, searchValue]);
 
-
+    let formatTotals = ttl => formatCurrency().format(ttl).replace(/(^[\w$]{1}|(\..)*)/gi, '');
 
     return (
         <>
@@ -54,7 +55,7 @@ const Index = () => {
                         ||
                         <>
                             {
-                                popular?.results && 
+                                popular?.results &&
                                 popular?.results?.map(m => <Card key={m.id} data={m} />)
                                 ||
                                 <h3>No Results</h3>
@@ -62,7 +63,7 @@ const Index = () => {
                             {
                                 popular?.total_pages &&
                                 <div className='w-full flex place-content-center place-items-center gap-2 flex-wrap'>
-                                    <PaginationC total={popular?.total_results} /> <span>{popular?.total_results} - total results</span>
+                                    <PaginationC total={popular?.total_results} /> <span>{formatTotals(popular?.total_results)} results - {formatTotals(popular?.total_pages)} page</span>
                                 </div>
                                 ||
                                 ''
