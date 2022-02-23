@@ -55,10 +55,13 @@ const Index = () => {
                         ||
                         <>
                             {
-                                popular?.results &&
+                                popular?.results.length &&
                                 popular?.results?.map(m => <Card key={m.id} data={m} />)
                                 ||
-                                <h3>No Results</h3>
+                                <h3 className='text-xl w-full grid place-content-center h-96'>
+                                    No Results
+                                    {' 🙄 '}
+                                </h3>
                             }
                             {
                                 popular?.total_pages &&
