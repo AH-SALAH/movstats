@@ -280,7 +280,7 @@ const BarChart = (props) => {
             .attr("class", "chart-title")
             .attr("text-anchor", "center")
             .style('font-size', '5em')
-            .transition(d3.easeElastic).delay(1000)
+            .transition(d3.easeElastic).duration(500).delay(1200)
             .attr("dx", dim.w / 2 - dim.margin.left - dim.margin.right)
             .attr("dy", -dim.margin.top)
             .style('font-size', '1.5em')
