@@ -162,12 +162,15 @@ This project using:
 ```
 yarn install
 
-// dev
+// for dev
 yarn dev
 
-// prod/build
+// for prod/build
 yarn build
 yarn start
+
+then go to http://localhost:3000/
+
 ```
 
 -   Don't forget Create .env.local file with credentials with those env var.\
