@@ -30,12 +30,12 @@ const BarChart = (props) => {
      *
      * @param {*} { svg, data: dta, yAxis, yScale, xAxis, xScale, dim: dimen }
      */
-    let drawGrid = ({ svg, data: dta, yAxis, yScale, xAxis, xScale, dim: dimen }) => {
+    let drawGrid = ({ svg, data: dta, yAxis, yScale, xAxis, xScale, dim: dimen, w, h }) => {
         // Gridline
         let ygrid = yAxis
             .ticks(dta?.length)
             .tickFormat("")
-            .tickSize(-dimen.w + dimen.margin.top + dimen.margin.bottom)
+            .tickSize(-w + dimen.margin.top + dimen.margin.bottom)
             .scale(yScale);
 
         svg.append("g")
@@ -60,7 +60,7 @@ const BarChart = (props) => {
         let xgrid = xAxis
             .ticks(dta?.length)
             .tickFormat("")
-            .tickSize(dimen.h - dimen.margin.left - dimen.margin.right)
+            .tickSize(h - dimen.margin.left - dimen.margin.right)
             .scale(xScale);
 
         svg.append("g")
@@ -93,22 +93,26 @@ const BarChart = (props) => {
     let createChart = useCallback((currentRef) => {
         if (!currentRef) return;
         // parent width & height for svg viewbox
-        let w = d3.select(currentRef)?.node()?.getBoundingClientRect()?.width;
-        let h = d3.select(currentRef)?.node()?.getBoundingClientRect()?.height;
+        let svgParent = d3.select(currentRef)?.node()?.getBoundingClientRect();
+        let w = svgParent?.width;
+        let h = svgParent?.height;
+        let margin = {top: svgParent?.top, bottom: svgParent?.bottom, left: svgParent?.left, right: svgParent?.right};
         // xaxis & yaxis values
         let dataV1 = v => Object.values(v)?.[0];
         let dataV2 = v => Object.values(v)?.[1];
 
-
         // init svg
         let svg = d3.select(currentRef)
-            .attr('width', dim.w + dim.margin.left + dim.margin.right)
-            .attr('height', dim.h + dim.margin.top + dim.margin.bottom)
-            .attr('viewbox', `0 0 ${w} ${h}`)
+            .attr('width', '80%' )
+            .attr('height', '80%' )
+            .attr('viewbox', `0 0 ${w - margin.left - margin.right} ${h - margin.top - margin.bottom}`)
             .style('overflow', 'visible')
             .append("g")
-            .attr('transform', `translate(${dim.margin.left + dim.margin.right}, ${dim.margin.top})`)
-            .style('overflow', `hidden`);
+            .attr('width', `${w - margin.left - margin.right}`)
+            .attr('height', `${h - margin.top - margin.bottom}` )
+            // .attr('transform', `translate(${margin.left - margin.right}, ${margin.top})`)
+            .style('overflow', 'hidden')
+            .style('margin', '0 auto');
 
         // pass svg to gradient hook to get created
         if (!barColor) setSvgEl(svg);
@@ -121,13 +125,13 @@ const BarChart = (props) => {
         // xscaleband
         let xScale = d3.scaleBand()
             .domain(data?.map(v => dataV1(v)))
-            .range([0, dim.w - dim.margin.left - dim.margin.right])
+            .range([0, w - dim.margin.left - dim.margin.right])
             .padding(0.3);
 
         // linear yscale
         let yScale = d3.scaleLinear()
             .domain([0, Math.max(...data?.map(v => dataV2(v)))])
-            .range([dim.h - dim.margin.top - dim.margin.bottom, 0]);
+            .range([h - dim.margin.top - dim.margin.bottom, 0]);
 
         // calc xaxis
         let xAxis = d3.axisBottom(xScale)
@@ -146,7 +150,7 @@ const BarChart = (props) => {
             .transition(d3.easeElastic).duration(1000)
             .style("opacity", 1)
             .style("fill", "slategray")
-            .attr('transform', `translate(0, ${dim.h - dim.margin.top - dim.margin.bottom})`)
+            .attr('transform', `translate(0, ${h - dim.margin.top - dim.margin.bottom})`)
             .selectAll('text')
             .attr("font-size", "0em")
             .style("text-anchor", "end")
@@ -173,7 +177,7 @@ const BarChart = (props) => {
             .attr("font-size", "1.1em");
 
         // draw grid lines
-        drawGrid({ svg, data, yAxis, yScale, xAxis, xScale, dim });
+        drawGrid({ svg, data, yAxis, yScale, xAxis, xScale, dim, w, h });
 
         // adding title like tooltip
         let parent = svg.node().parentElement.parentElement;
@@ -226,7 +230,7 @@ const BarChart = (props) => {
             .style('opacity', 0)
             .attr("rx", 4)
             .attr('x', v => xScale(dataV1(v)))
-            .attr('y', v => dim.h - dim.margin.top - dim.margin.bottom)
+            .attr('y', v => h - dim.margin.top - dim.margin.bottom)
             .attr('width', xScale.bandwidth())
             .attr('height', 10)
             .style("fill", `none`)
@@ -236,7 +240,7 @@ const BarChart = (props) => {
             .style("stroke-width", 1)
             .transition(d3.easeElastic).duration((v, i) => i * 300).delay(300)
             .style("stroke-dashoffset", 2000)
-            .attr('height', (v, i) => dim.h - yScale(dataV2(v)) - dim.margin.top - dim.margin.bottom)
+            .attr('height', (v, i) => h - yScale(dataV2(v)) - dim.margin.top - dim.margin.bottom)
             .attr('y', v => yScale(dataV2(v)))
             .style('opacity', 1)
             // if bargradient passed do gradient, else set barcolor
@@ -262,8 +266,8 @@ const BarChart = (props) => {
             .attr("class", "x label")
             .attr("text-anchor", "end")
             .transition(d3.easeElastic)
-            .attr("dx", dim.w - dim.margin.left + dim.margin.right)
-            .attr("y", dim.h - dim.margin.top - dim.margin.bottom + 6)
+            .attr("dx", w - dim.margin.left + dim.margin.right)
+            .attr("y", h - dim.margin.top - dim.margin.bottom + 6)
             .text(`${xLabel}`);
 
         // draw y label
@@ -281,7 +285,7 @@ const BarChart = (props) => {
             .attr("text-anchor", "center")
             .style('font-size', '5em')
             .transition(d3.easeElastic).duration(500).delay(1200)
-            .attr("dx", dim.w / 2 - dim.margin.left - dim.margin.right)
+            .attr("dx", w / 2 - dim.margin.left - dim.margin.right)
             .attr("dy", -dim.margin.top)
             .style('font-size', '1.5em')
             .style('fill', 'darkslateblue')
@@ -293,7 +297,7 @@ const BarChart = (props) => {
             .attr("class", "c_legend")
             .attr("text-anchor", "end")
             .transition(d3.easeElastic).delay(500)
-            .attr("cx", dim.w - dim.margin.right - dim.margin.left + 15)
+            .attr("cx", w - dim.margin.right - dim.margin.left + 15)
             .attr("cy", dim.margin.top)
             .attr("fill", `${barColor || lgd}`)
             .attr("r", 7);
@@ -303,7 +307,7 @@ const BarChart = (props) => {
             .attr("text-anchor", "start")
             .style('font-size', '1.7em')
             .transition(d3.easeElastic).delay(500)
-            .attr("x", dim.w - dim.margin.right - dim.margin.left + 30)
+            .attr("x", w - dim.margin.right - dim.margin.left + 30)
             .attr("y", dim.margin.top + 3)
             .style('font-size', '.7em')
             .style('font-weight', 'bold')
@@ -330,8 +334,8 @@ const BarChart = (props) => {
 
 
     return (
-        <div className="px-14 py-16 w-full h-full flex place-content-center bg-gradient-to-t">
-            <svg ref={svgRef} className={'shadow-md'} ></svg>
+        <div className="px-14 py-16 w-full lg:w-4/5 h-[600px] m-auto text-center flex place-items-center place-content-center bg-gradient-to-t">
+            <svg ref={svgRef} className={'shadow-md text-center m-auto flex place-content-center'} ></svg>
         </div>
     )
 }

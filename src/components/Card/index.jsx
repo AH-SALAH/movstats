@@ -22,7 +22,7 @@ const Card = ({ data, w, h='h-auto' }) => {
                         <Image
                             placeholder='blur'
                             blurDataURL={`data:image/svg+xml;base64,${ShimmerPlaceholder(100, 100)}`}
-                            src={process.env.NEXT_PUBLIC_MOVIEDB_BASEIMGURL + '/w200' + poster_path}
+                            src={poster_path && process.env.NEXT_PUBLIC_MOVIEDB_BASEIMGURL + '/w200' + poster_path || '/assets/images/na.jpg'}
                             layout="fill"
                             quality={85}
                             className="w-full h-full transition-transform duration-300 group-hover:scale-[1.02] aspect-[inherit] object-cover"
@@ -34,7 +34,7 @@ const Card = ({ data, w, h='h-auto' }) => {
                         <div className='bg-indigo-400 rounded-b-2xl shadow-xl px-2 py-1 text-white'>
                             <time className="date flex place-items-start gap-2">
                                 <CalendarIcon width={15} height={15} />
-                                <small>{formatedDate(release_date)}</small>
+                                <small>{formatedDate(release_date) ||<span>{' 🤷‍♀️' }</span>}</small>
                             </time>
                             <div className="rating flex place-items-center gap-2">
                                 <span className='text-black text-lg font-bold'>{''+(vote_average).toFixed(1)}</span>
