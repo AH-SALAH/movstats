@@ -23,7 +23,7 @@ const StatsHeader = () => {
                 layout="fill"
                 alt='header-bg'
             />
-            <div className='flex gap-4 w-full absolute top-1/2 -translate-y-1/2 place-content-center place-items-center z-20'>
+            <div className='flex gap-4 w-full absolute top-3/4 md:top-1/2 -translate-y-1/2 place-content-center place-items-center z-20'>
                 <ChartBarIcon width={40} height={40} color={'white'} /> <h1 className='text-3xl text-white font-bold'>Movies Statistics</h1>
             </div>
         </header>
