@@ -1,4 +1,5 @@
-export let formatedDate = (date=Date.now()) => {
+export let formatedDate = (date = Date.now()) => {
+    if (!date) return false;
     return new Date(date)
         .toLocaleDateString(undefined,
             {
