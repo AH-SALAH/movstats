@@ -31,7 +31,7 @@ const Stats = () => {
                             top10Movies?.map(m => { return { name: m.title, rating: m.vote_average } })
                         }
                         xLabel={' ⬅ Movies '}
-                        yLabel={'Rating 📉 '}
+                        yLabel={'Rating 📊 '}
                         header={'Top 10 Rated Movies'}
                     />
                     <BarChart
@@ -40,7 +40,7 @@ const Stats = () => {
                         }
                         shortenYnumber
                         xLabel={' ⬅ Movies '}
-                        yLabel={'How Many Votes 📉 '}
+                        yLabel={'How Many Votes 📊 '}
                         header={'Total Times Rating'}
                     />
                 </>
