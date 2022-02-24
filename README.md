@@ -48,7 +48,7 @@ Using d3js to demo the stats & get some stats for movies.
 
 ```
 .
-├── components
+├── components  ----------------> // single components
 │   ├── Auth
 │   │   └── useGuestAuth.jsx
 │   ├── Card
@@ -71,10 +71,10 @@ Using d3js to demo the stats & get some stats for movies.
 │   │   └── index.jsx
 │   └── Sort
 │       └── index.jsx
-├── data
+├── data  --------------------------> // data service & apis
 │   ├── index.jsx
 │   └── movies.jsx
-├── layout
+├── layout -------------------------> // site layout 
 │   ├── Details
 │   │   ├── index.jsx
 │   │   ├── LeftSlice.jsx
@@ -94,7 +94,7 @@ Using d3js to demo the stats & get some stats for movies.
 │   │   ├── index.jsx
 │   │   └── StatsHeader.jsx
 │   └── index.jsx
-├── pages
+├── pages ---------------------------> // site pages/routes
 │   ├── details
 │   │   └── [slug]
 │   │       └── [id].jsx
@@ -102,16 +102,16 @@ Using d3js to demo the stats & get some stats for movies.
 │   ├── _document.jsx
 │   ├── index.jsx
 │   └── stats.jsx
-├── store
+├── store --------------------------> // redux store
 │   ├── features
 │   │   ├── movies
 │   │   │   └── moviesSlice.jsx
 │   │   └── users
 │   │       └── usersSlice.jsx
 │   └── index.jsx
-├── styles
+├── styles ------------------------> // global sass styles
 │   └── global.scss
-└── utils
+└── utils -------------------------> // utilities functions
     ├── AppConfig.js
     ├── formatCurrency.js
     ├── formatDate.js
@@ -120,13 +120,33 @@ Using d3js to demo the stats & get some stats for movies.
 
 ```
 
+##### documentation
+
+###### Components : 
+- Components which had been used throughout the app.
+###### Data: 
+- Server apis list to utilize throughout the app & the axios/http handler default instance.
+###### Layout: 
+- Main app layout like header, footer & content.
+###### Pages: 
+- The app pages or routes (mandatory for nextjs as it's being used as folder/file routing).
+###### Store: 
+- Redux store data slices/reducers+actions.
+###### Styles: 
+- Global styles and other styles may be imported in, also if sass in use could be other sass related files be here (e.g. mixins, vars, etc..). 
+Other module css/sass files can be found in it's same module/component folder.
+###### Utils: 
+- Other helpers functions to use through the project (e.g. formaters, app config, slugify strings etc..)
+
+
+
 ---
 
 #### Tech Used
 
 This project using:
 
-✔ Nextjs - React\
+✔ React - Nextjs \
 ✔ Tailwind - to use just it's css utilities instead of bootstrap\
 ✔ scss\
 ✔ Redux\
@@ -161,7 +181,7 @@ yarn start
 #### 🚀 Deployment <a name = "deployment"></a>
 
 It can be deployed any where staticly as there is no ssr used.
-deployed on vercel <a href="https://movstats.vercel.app/">App</a>
+Deployed on vercel <a href="https://movstats.vercel.app/">App</a>
 
 ---
 
@@ -175,7 +195,7 @@ deployed on vercel <a href="https://movstats.vercel.app/">App</a>
 
 Challenges had been met through.
 
--   getting charts do its drawing correctly from the first times.
+-   getting charts do its drawing correctly from the first times, it needed some Patience & searching.
 -   dealing with redux toolkit new syntax.
 
 ---
@@ -189,11 +209,9 @@ may as TODO
 -   Change the carousel auto scroll functionality to normal to enhance perf in details page.
 -   maybe converting to typescript.
 -   Add some tests.
--   it's a demo assess but sure UI enhancement.
+-   UI enhancement.
 -   dockerizing the app.
 
 ---
-
-\*commits had been forgotten to be done frequently through this demo.
 
 Thank you.
