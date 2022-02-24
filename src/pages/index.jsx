@@ -55,7 +55,7 @@ const Index = () => {
                         ||
                         <>
                             {
-                                popular?.results.length &&
+                                popular?.results?.length &&
                                 popular?.results?.map(m => <Card key={m.id} data={m} />)
                                 ||
                                 <h3 className='text-xl w-full grid place-content-center h-96'>
