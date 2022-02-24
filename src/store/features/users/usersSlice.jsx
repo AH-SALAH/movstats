@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk, current } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { getGuestSession } from '@/data/movies';
 import axios from '@/data';
 
@@ -28,7 +28,6 @@ export const usersSlice = createSlice({
             localStorage.setItem('g_session', payload.guest_session_id);
             axios.defaults.params.guest_session_id = payload.guest_session_id;
             state.loading = false;
-            console.log("state: ", current(state));
         });
         builder.addCase(reqGuestSession.rejected, (state) => {
             state.loading = false;

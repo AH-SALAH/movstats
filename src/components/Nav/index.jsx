@@ -22,7 +22,7 @@ let navLinks = [
 
 const Nav = () => {
     let router = useRouter();
-    console.log("router: ", router);
+
     return (
         <div className="w-full flex place-content-center md:place-content-start place-items-center px-14 py-5 flex-wrap">
             <div className="text-2xl font-bold text-zinc-100 text-center w-full md:w-auto md:mr-10 flex place-content-center md:place-content-start place-items-center gap-2">
