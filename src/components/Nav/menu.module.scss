@@ -1,0 +1,27 @@
+.menu{
+    
+    & li{
+
+        & a{
+            @apply relative;
+
+            &:before{
+                @apply z-0 transition-all mt-1 content-[''] absolute top-full right-0 left-0 w-0 h-[3px] bg-zinc-100 opacity-0 rounded-lg shadow-md;
+            }
+
+            &:hover:before{
+                @apply opacity-100 w-full;
+            }
+            
+        }
+    }
+}
+
+.activeLink{
+    @apply text-indigo-600;
+
+    &:before{
+        opacity: 1!important;
+        width: 100%!important;
+    }
+}
