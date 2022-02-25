@@ -199,7 +199,7 @@ Deployed on vercel <a href="https://movstats.vercel.app/">App</a>
 Challenges had been met through.
 
 -   getting charts do its drawing correctly from the first times, it needed some Patience & searching.
--   dealing with redux toolkit new syntax.
+-   dealing with redux toolkit new syntax. "not much"
 
 ---
 
@@ -217,5 +217,5 @@ may as TODO
 
 ---
 
-Thank you. 
+Thank you. \
 *see also [facebook clone](https://github.com/AH-SALAH/facebook-clone) 🦆 
