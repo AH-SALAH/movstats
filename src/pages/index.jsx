@@ -13,7 +13,7 @@ import { formatCurrency } from '@/utils/formatCurrency';
 
 const Index = () => {
     let router = useRouter();
-    let { moviesData: popular, loading, searchValue } = useSelector((state) => state.movies);
+    let { moviesData: popular, loading, searchValue, sortValue } = useSelector((state) => state.movies);
     let dispatch = useDispatch();
     let mainDivRef = useRef(null);
 
@@ -26,6 +26,9 @@ const Index = () => {
 
 
     useEffect(() => {
+        // if there sorting operation then ignore here as sorting 
+        // already requesting it's data
+        if(sortValue) return;
         // search with some sort of debounce
         let timeOut = 0;
         clearTimeout(timeOut);

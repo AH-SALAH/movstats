@@ -6,6 +6,7 @@ let initialState = {
     moviesData: [],
     movieDetails: {},
     searchValue: '',
+    sortValue: '',
     rating: { loading: false },
     top10: []
 };
@@ -48,7 +49,10 @@ export const moviesSlice = createSlice({
     reducers: {
         setSearchValue: (state, { payload }) => {
             state.searchValue = payload;
-        }
+        },
+        setSortValue: (state, { payload }) => {
+            state.sortValue = payload;
+        },
     },
     extraReducers: (builder) => {
         // get movie details cases
@@ -126,6 +130,6 @@ export const moviesSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { setSearchValue } = moviesSlice.actions;
+export const { setSearchValue, setSortValue } = moviesSlice.actions;
 
 export default moviesSlice.reducer;

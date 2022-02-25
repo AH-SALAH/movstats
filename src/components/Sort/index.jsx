@@ -4,8 +4,8 @@ import RefreshIcon from '@heroicons/react/outline/RefreshIcon';
 import MenuPopover from '@/components/Popover';
 import { RadioGroup } from '@headlessui/react';
 import { useEffect, useCallback, forwardRef, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { sortAllMovies, fetchAllMovies, searchAllMovies } from '@/store/features/movies/moviesSlice';
+import { useDispatch } from 'react-redux';
+import { sortAllMovies, setSortValue } from '@/store/features/movies/moviesSlice';
 import { useRouter } from 'next/router';
 
 
@@ -17,11 +17,11 @@ let sortOptions = [
 
 const Sort = ({ mainDivRef }) => {
     let [selected, setSelected] = useState(null);
-    let { searchValue } = useSelector((state) => state.movies);
     let dispatch = useDispatch();
     let router = useRouter();
 
     let handleSort = useCallback(async (page) => {
+        dispatch(setSortValue(selected));
         dispatch(sortAllMovies({ sort_by: selected, page }));
         if (page && window !== undefined) window?.scrollTo({ top: (mainDivRef?.current?.offsetTop - parseInt(window?.getComputedStyle(mainDivRef?.current, null).getPropertyValue('padding-top'))), behavior: 'smooth' });
     }, [dispatch, mainDivRef, selected]);
@@ -40,9 +40,9 @@ const Sort = ({ mainDivRef }) => {
 
     let handleReset = () => {
         setSelected(null);
-        // respect search value
-        if (searchValue) dispatch(searchAllMovies({ searchValue, page: router?.query?.page }));
-        else dispatch(fetchAllMovies(router?.query?.page));
+        dispatch(setSortValue(''));
+        // return to 1st page 🤔 
+        router?.push({ query: { ...router?.query, page: 1 } }, null, { shallow: true });
     };
 
     return (
