@@ -14,7 +14,7 @@ const Card = ({ data, w, h='h-auto' }) => {
     return (
         <div id={id} className={`relative ${w || 'w-1/3 lg:w-1/6'} ${h}`}>
             <Link as={`/details/${slugify(title)}/${id}`} href={'/details/[slug]/[id]'}>
-                <a className={`card cursor-pointer group border-0 hover:border-0 flex-col w-full relative h-96 rounded-xl overflow-hidden flex`} title={title} aria-label={'movie-card'} tabIndex={0}>
+                <a className={`card cursor-pointer group border-0 hover:border-0 flex-col w-full relative h-96 rounded-xl overflow-hidden flex`} title={title} aria-label={'movie-card'} tabIndex={1}>
                     <div className={`${cardStyle.layover_light} z-10 rounded-b-2xl after:bottom-0 after:absolute shadow-lg after:left-0 after:right-0 after:w-full after:h-14 after:bg-gradient-to-t after:from-zinc-800 after:via-zinc-800 after:opacity-70 relative w-full h-full flex flex-grow group bg-cover overflow-hidden`}>
                         <span className="absolute left-3 bottom-3 z-10">
                             <p className="font-bold dark:text-zinc-200 text-zinc-100 line-clamp-2">{title}</p>
