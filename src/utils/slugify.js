@@ -1,1 +1,1 @@
-export let slugify = (slug='') => slug?.replace(/(\s)+/gi, '_');
+export let slugify = (slug='') => encodeURI(slug?.replace(/(\s|\/|\\)+/gi, '_'));
