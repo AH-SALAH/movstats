@@ -42,6 +42,7 @@ const Slider = ({ data: { similar }, title }) => {
                             speed: 2,
                             rewind: true
                         },
+                        lazyLoad: 'nearby'
                     }}
                 >
                     {
