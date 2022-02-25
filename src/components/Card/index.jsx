@@ -25,7 +25,7 @@ const Card = ({ data, w, h='h-auto' }) => {
                             src={poster_path && process.env.NEXT_PUBLIC_MOVIEDB_BASEIMGURL + '/w200' + poster_path || '/assets/images/na.jpg'}
                             layout="fill"
                             quality={85}
-                            className="w-full h-full transition-transform duration-300 group-hover:scale-[1.02] aspect-[inherit] object-cover"
+                            className="w-full h-full transition-transform duration-300 group-hover:scale-[1.02] aspect-[inherit] object-fill"
                             alt={'movie'}
                         />
                     </div>
