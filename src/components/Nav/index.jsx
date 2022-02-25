@@ -37,7 +37,7 @@ const Nav = () => {
                     navLinks?.map(l => (
                             <li key={l.title} className="text-center flex place-content-center md:place-content-start">
                                 <Link href={`${l.href}`}>
-                                    <a className={`${router.asPath === l.href && navStyle.activeLink || ''} bg-zinc-800 md:bg-transparent px-2 py-1 rounded-xl mb-4 text-zinc-100 hover:text-indigo-600 border-none flex place-items-center gap-1`}>
+                                    <a className={`${router.asPath === l.href && navStyle.activeLink || ''} bg-zinc-800 md:bg-transparent px-2 py-1 rounded-xl mb-4 md:mb-0 text-zinc-100 hover:text-indigo-600 border-none flex place-items-center gap-1`}>
                                         {l.icon} <span>{l.title}</span>
                                     </a>
                                 </Link>
