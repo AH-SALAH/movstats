@@ -38,8 +38,18 @@ const Details = () => {
                     blurDataURL={`data:image/svg+xml;base64,${ShimmerPlaceholder(100, 100)}`}
                     priority
                     quality={90}
-                    src={movie?.backdrop_path && process.env.NEXT_PUBLIC_MOVIEDB_BASEIMGURL + '/w1280' + movie?.backdrop_path || '/assets/images/mwp.jpg'}
-                    className={`object-cover lg:aspect-video aspect-auto transition-all duration-1000 ${!movie?.backdrop_path && 'blur-sm sepia-[20%]' || ''}`}
+                    src={'/assets/images/mwp.jpg'}
+                    className={`object-cover lg:aspect-video aspect-auto transition-all duration-1000 ${!movie?.backdrop_path || loading && 'blur-sm sepia-[20%] opacity-100' || 'opacity-0'}`}
+                    layout="fill"
+                    alt='header-bg'
+                />
+                <Image
+                    placeholder='blur'
+                    blurDataURL={`data:image/svg+xml;base64,${ShimmerPlaceholder(100, 100)}`}
+                    priority
+                    quality={90}
+                    src={process.env.NEXT_PUBLIC_MOVIEDB_BASEIMGURL + '/w1280' + movie?.backdrop_path}
+                    className={`object-cover lg:aspect-video aspect-auto transition-all duration-1000 ${!movie?.backdrop_path && 'opacity-0' || 'opacity-100'}`}
                     layout="fill"
                     alt='header-bg'
                 />
