@@ -209,7 +209,6 @@ may as TODO
 
 -   Add persistant to the redux store\
     or may use reactQuery/swr to utilize their cache mechanizm.
--   Change the carousel auto scroll functionality to normal to enhance perf in details page.
 -   maybe converting to typescript.
 -   Add some tests.
 -   UI enhancement.
