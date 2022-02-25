@@ -311,7 +311,7 @@ const BarChart = (props) => {
             .append("g")
             .attr('width', `${w - margin.left - margin.right}`)
             .attr('height', `${h - margin.top - margin.bottom}`)
-            .attr('transform', `translate(${dimen.margin.left + (smScr && 10 || 0)}, ${dimen.margin.top})`)
+            .attr('transform', `translate(${dimen.margin.left + (smScr && 7 || -20)}, ${dimen.margin.top})`)
             .style('overflow', 'auto')
             .style('margin', '0 auto');
     };
