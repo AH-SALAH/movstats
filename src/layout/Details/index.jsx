@@ -14,7 +14,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const Details = () => {
     let router = useRouter();
-    let { movieDetails: movie, loading } = useSelector((state) => state.movies);
+    let { movieDetails: movie } = useSelector((state) => state.movies);
     let dispatch = useDispatch();
 
     let movieDetails = useCallback(async (id) => {
