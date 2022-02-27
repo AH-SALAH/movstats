@@ -15,7 +15,7 @@ const RightSlice = ({ data }) => {
                     (!data || loading) && <List uniqueKey="list-loading" width={'100%'} height={'100%'} foregroundColor='#575656' style={{ width: '100%', height: '100%' }} />
                     ||
                     <AnimatePresence>
-                        <motion.div
+                        <motion.span
                             key={router?.asPath}
                             initial={{ x: 20, opacity: 0 }}
                             animate={{ x: 0, opacity: 1, transition: { delay: 1 } }}
@@ -24,7 +24,7 @@ const RightSlice = ({ data }) => {
                             {
                                 data?.overview
                             }
-                        </motion.div>
+                        </motion.span>
                     </AnimatePresence>
                 }
             </p>
