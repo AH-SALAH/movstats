@@ -2,6 +2,7 @@ export let formatCurrency = (currency = 'USD') => new Intl.NumberFormat(undefine
     style: 'currency',
     currency,
     maximumFractionDigits: 1,
+    minimumFractionDigits: 0,
     notation: "compact",
     compactDisplay: "short"
     //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)

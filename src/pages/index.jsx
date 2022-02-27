@@ -53,7 +53,7 @@ const Index = () => {
             />
             <Layout>
 
-                <section ref={mainDivRef} className='w-full flex gap-3 flex-wrap place-content-center'>
+                <section ref={mainDivRef} className='w-full flex space-x-3 flex-wrap place-content-center'>
                     {
                         loading && (<Loading />)
                         ||
