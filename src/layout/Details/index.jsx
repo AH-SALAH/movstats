@@ -9,6 +9,7 @@ import { useEffect, useCallback } from 'react';
 import ShimmerPlaceholder from '@/components/Skeletons/ShimmerPlaceholder';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchMovieDetails } from '@/store/features/movies/moviesSlice';
+import { motion } from 'framer-motion';
 
 
 const Details = () => {
@@ -39,20 +40,26 @@ const Details = () => {
                     priority
                     quality={90}
                     src={'/assets/images/mwp.jpg'}
-                    className={`object-cover lg:aspect-video aspect-auto transition-all duration-1000 ${!movie?.backdrop_path || loading && 'blur-sm sepia-[20%] opacity-100' || 'opacity-0'}`}
+                    className={`object-cover lg:aspect-video aspect-auto transition-all duration-1000 blur-sm sepia-[20%] opacity-100`}
                     layout="fill"
                     alt='header-bg'
                 />
-                <Image
-                    placeholder='blur'
-                    blurDataURL={`data:image/svg+xml;base64,${ShimmerPlaceholder(100, 100)}`}
-                    priority
-                    quality={90}
-                    src={process.env.NEXT_PUBLIC_MOVIEDB_BASEIMGURL + '/w1280' + movie?.backdrop_path}
-                    className={`object-cover lg:aspect-video aspect-auto transition-all duration-1000 ${!movie?.backdrop_path && 'opacity-0' || 'opacity-100'}`}
-                    layout="fill"
-                    alt='header-bg'
-                />
+                <motion.div
+                    key={router?.asPath}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                >
+                    <Image
+                        placeholder='blur'
+                        blurDataURL={`data:image/svg+xml;base64,${ShimmerPlaceholder(100, 100)}`}
+                        priority
+                        quality={90}
+                        src={process.env.NEXT_PUBLIC_MOVIEDB_BASEIMGURL + '/w1280' + movie?.backdrop_path}
+                        className={`object-cover lg:aspect-video aspect-auto transition-all duration-1000 ${!movie?.backdrop_path && 'opacity-0' || 'opacity-100'}`}
+                        layout="fill"
+                        alt='header-bg'
+                    />
+                </motion.div>
                 <div className='w-full h-full z-30 flex flex-wrap'>
                     <LeftSlice data={movie} />
                     <RightSlice data={movie} />

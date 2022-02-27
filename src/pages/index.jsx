@@ -36,6 +36,7 @@ const Index = () => {
             popularMovies(router?.query?.page, searchValue);
         }, 1200);
         return () => clearTimeout(timeOut);
+        // eslint-disable-next-line
     }, [router?.query?.page, popularMovies, searchValue]);
 
     let formatTotals = ttl => formatCurrency().format(ttl).replace(/(^[\w$]{1}|(\..)*)/gi, '');

@@ -84,7 +84,7 @@ const Header = ({ img = '', hasSearch = true, title = '' }) => {
                 hasSearch &&
                 <form onSubmit={handleSubmit} className={`search flex place-self-center place-content-center place-items-center z-30 relative px-4 top-1/3 -translate-y-1/3 w-full lg:w-1/2`}>
                     <label htmlFor="search-movies" className={`rounded-3xl w-full relative flex place-content-center place-items-center`}>
-                        <input disabled={loading} onFocus={() => setOpenSearch(true)} onBlur={handleBlur} onChange={handleChange} type="text" name="search-movies" placeholder='Search movies...' className={`${loading ? 'h-0 py-[1px]' : ' py-3'} px-4 rounded-3xl border-0 outline-none transition-all ${searchValue || openSearch ? 'w-full' : 'w-1/2'} placeholder:text-zinc-800 disabled:bg-zinc-300 ${headerStyle.inner_shadow} shadow-2xl`} />
+                        <input defaultValue={searchValue} disabled={loading} onFocus={() => setOpenSearch(true)} onBlur={handleBlur} onChange={handleChange} type="text" name="search-movies" placeholder='Search movies...' className={`${loading ? 'h-0 py-[1px]' : ' py-3'} px-4 rounded-3xl border-0 outline-none transition-all ${searchValue || openSearch ? 'w-full' : 'w-1/2'} placeholder:text-zinc-800 disabled:bg-zinc-300 ${headerStyle.inner_shadow} shadow-2xl`} />
                         {
                             loading &&
                             <LoadingIcon classes={'absolute right-3 w-8 h-8'} />
