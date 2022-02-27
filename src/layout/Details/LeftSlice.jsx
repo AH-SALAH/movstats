@@ -157,7 +157,7 @@ const RateSection = ({ data }) => {
 const CompaniesSection = ({ data }) => (
     <div className='flex gap-3 flex-wrap mb-5'>
         {
-            data?.production_companies.length &&
+            data?.production_companies?.length &&
             data?.production_companies?.map(c =>
                 c.logo_path &&
                 <div key={c.id}>
