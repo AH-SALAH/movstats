@@ -14,7 +14,7 @@ const Card = ({ data, w, h = 'h-auto' }) => {
     let { id, title, poster_path, release_date, vote_average } = data;
 
     return (
-        <motion.div key={id} className={`relative ${w || 'w-1/3 lg:w-1/6'} ${h}`}
+        <motion.div key={id} className={`relative ${w || 'w-1/2 md:w-1/3 lg:w-1/6'} ${h}`}
             whileTap={{
                 transition: { duration: 0.2 },
                 filter: [
