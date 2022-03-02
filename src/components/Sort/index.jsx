@@ -10,13 +10,14 @@ import { useRouter } from 'next/router';
 
 
 let sortOptions = [
+    { "Sort by popularity": "popularity.desc", "default": true },
     { "Sort by rate": "vote_average.desc" },
     { "Sort by release date": "release_date.desc" },
     { "Sort by revenue": "revenue.desc" }
 ];
 
 const Sort = ({ mainDivRef }) => {
-    let [selected, setSelected] = useState(null);
+    let [selected, setSelected] = useState("popularity.desc");
     let dispatch = useDispatch();
     let router = useRouter();
 
@@ -28,7 +29,7 @@ const Sort = ({ mainDivRef }) => {
 
     useEffect(() => {
         let timeOut = 0;
-        if (selected) {
+        if (selected && selected !== "popularity.desc") {
             // debounce sort selections
             clearTimeout(timeOut);
             timeOut = setTimeout(() => {
@@ -39,7 +40,7 @@ const Sort = ({ mainDivRef }) => {
     }, [selected, handleSort, router?.query?.page]);
 
     let handleReset = () => {
-        setSelected(null);
+        setSelected("popularity.desc");
         dispatch(setSortValue(''));
         // return to 1st page 🤔 
         router?.push({ query: { ...router?.query, page: 1 } }, null, { shallow: true });
@@ -49,12 +50,12 @@ const Sort = ({ mainDivRef }) => {
         <div className='sort z-30 text-center fixed right-10 top-1/4 transform -translate-y-1/2 place-content-center place-items-center rounded-full w-10 h-10'>
             <MenuPopover ReferenceEl={forwardRef(function RefElComp(props, ref) {
                 return (
-                    <div className={`flex gap-2 relative ${selected && 'right-10' || ''}`}>
+                    <div className={`flex gap-2 relative ${selected && selected !== "popularity.desc" && 'right-10' || ''}`}>
                         <button title='Sort' ref={ref} className='order-2 rounded-full flex place-content-center place-items-center w-10 h-10 border-0 text-white bg-indigo-400 shadow-lg hover:bg-indigo-500'>
                             <SortDescendingIcon width={20} height={20} />
                         </button>
                         {
-                            selected &&
+                            selected && selected !== "popularity.desc" &&
                             <button title='reset' onClick={handleReset} className='order-1 rounded-full flex place-content-center place-items-center w-10 h-10 border-0 bg-zinc-400 shadow-md hover:bg-zinc-500'>
                                 <RefreshIcon width={20} height={20} />
                             </button>
@@ -68,7 +69,7 @@ const Sort = ({ mainDivRef }) => {
             >
                 <div className="w-full px-4 py-10">
                     <div className="w-full max-w-md mx-auto">
-                        <RadioGroup value={selected} onChange={setSelected}>
+                        <RadioGroup defaultChecked={selected === "popularity.desc"} value={selected} onChange={setSelected}>
                             <RadioGroup.Label className="sr-only">Sort</RadioGroup.Label>
                             <div className="space-y-2">
                                 {
