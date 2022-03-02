@@ -70,7 +70,7 @@ const Index = () => {
                             {
                                 popular?.total_pages &&
                                 <div className='w-full flex place-content-center place-items-center gap-2 flex-wrap'>
-                                    <PaginationC total={popular?.total_results} /> <span>{formatTotals(popular?.total_results)} results - {formatTotals(popular?.total_pages)} page</span>
+                                    <PaginationC total={popular?.total_results} /> <span>{formatTotals(popular?.total_results)} items / {formatTotals(popular?.total_pages)} total pages</span>
                                 </div>
                                 ||
                                 ''
