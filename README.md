@@ -214,6 +214,10 @@ may as TODO
 -   UI enhancement.
 -   dockerizing the app.
 
+✅  PWA 
+```CMD to generate required assets after creating icon.png "as refs":``` 
+``` npx pwa-asset-generator ./public/icon.png -i ./public/index.html -m ./public/manifest.json --mstile ./public/icons --opaque false --type png --xhtml true```
+
 ---
 
 Thank you. \
