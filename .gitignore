@@ -34,3 +34,8 @@ local
 
 # vercel
 .vercel
+
+# pwa
+/public/workbox-*
+/public/sw.*
+/public/fallback-*
