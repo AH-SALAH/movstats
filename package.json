@@ -8,12 +8,13 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "build-stats": "cross-env ANALYZE=true npm run build",
+        "build-stats": "cross-env ANALYZE=true yarn build",
         "export": "next export",
         "build-prod": "run-s clean build export",
         "clean": "rimraf .next out",
         "lint": "next lint",
-        "build-types": "tsc --noEmit --pretty"
+        "build-types": "tsc --noEmit --pretty",
+        "e2e": "playwright test"
     },
     "dependencies": {
         "@etchteam/next-pagination": "^3.2.0",
@@ -38,6 +39,7 @@
     },
     "devDependencies": {
         "@next/bundle-analyzer": "^12.1.0",
+        "@playwright/test": "^1.19.2",
         "@svgr/webpack": "^6.2.1",
         "@types/node": "^17.0.18",
         "@types/react": "^17.0.39",

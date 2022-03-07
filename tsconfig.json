@@ -44,6 +44,7 @@
     "exclude": ["./out/**/*", "./node_modules/**/*"],
     "include": [
         "next-env.d.ts",
+        "**/*.js",
         "**/*.ts",
         "**/*.tsx",
         "src/template/Main.jsx",

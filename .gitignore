@@ -39,3 +39,7 @@ local
 /public/workbox-*
 /public/sw.*
 /public/fallback-*
+
+# e2e
+test-results/
+e2e/test-results

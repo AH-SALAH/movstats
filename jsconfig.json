@@ -44,12 +44,13 @@
     "exclude": ["./out/**/*", "./node_modules/**/*"],
     "include": [
         "next-env.d.ts",
+        "**/*.js",
         "**/*.ts",
         "**/*.tsx",
         "src/template/Main.jsx",
         "src/pages/_app.jsx",
         "src/pages/_document.jsx",
         "src/pages/about.jsx",
-        "src/pages/index.jsx"
+        "src/pages/index.jsx",
     ]
 }
