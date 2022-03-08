@@ -1,7 +1,7 @@
 import { PlaywrightTestConfig, devices } from '@playwright/test';
 import path from 'path';
 
-const site_url = process?.env?.NEXT_PUBLIC_SITEURL || 'http://localhost:3000';
+const site_url = 'http://localhost:3000';
 
 // Reference: https://playwright.dev/docs/test-configuration
 const config: PlaywrightTestConfig = {
@@ -9,8 +9,8 @@ const config: PlaywrightTestConfig = {
     timeout: 30 * 1000,
     // Test directory
     testDir: path.join(__dirname, 'e2e'),
-    // If a test fails, retry it additional 2 times
-    retries: 2,
+    // If a test fails, retry it additional 1 times
+    retries: 0,
     // 'github' for GitHub Actions CI to generate annotations, plus a concise 'dot'
     // default 'list' when running locally
     reporter: process.env.CI ? 'github' : 'list',
@@ -25,7 +25,7 @@ const config: PlaywrightTestConfig = {
         timeout: 120 * 1000,
         reuseExistingServer: !process.env.CI,
     },
-
+    
     use: {
         baseURL: site_url,
         // browserName: "chromium",
@@ -42,6 +42,7 @@ const config: PlaywrightTestConfig = {
         // contextOptions: {
         //   ignoreHTTPSErrors: true,
         // },
+        // screenshot: 'only-on-failure',
     },
 
     projects: [
@@ -65,20 +66,20 @@ const config: PlaywrightTestConfig = {
         //   },
         // },
         // Test against mobile viewports.
-        {
-            name: 'Mobile Chrome',
-            use: {
-                // browserName: 'chromium',
-                ...devices['Pixel 5'],
-            },
-        },
-        {
-            name: 'Mobile Safari',
-            use: {
-                // browserName: 'webkit',
-                ...devices['iPhone 12'],
-            }
-        },
+        // {
+        //     name: 'Mobile Chrome',
+        //     use: {
+        //         // browserName: 'chromium',
+        //         ...devices['Pixel 5'],
+        //     },
+        // },
+        // {
+        //     name: 'Mobile Safari',
+        //     use: {
+        //         // browserName: 'webkit',
+        //         ...devices['iPhone 12'],
+        //     }
+        // },
     ],
 }
 export default config;
