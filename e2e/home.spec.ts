@@ -1,5 +1,5 @@
 import { test, expect, Page } from '@playwright/test';
-import * as mocked_resp from './mocked_resp.json';
+// import * as mocked_resp from './mocked_resp.json';
 
 // simple test
 test.describe("Home page tests", () => {
@@ -14,7 +14,7 @@ test.describe("Home page tests", () => {
         // await context.route(`https://api.themoviedb.org/3/movie/popular?**`, (route) =>
         //     route.fulfill({
         //         status: 200,
-        //         body: JSON.stringify([mocked_resp]),
+        //         body: JSON.stringify(mocked_resp),
         //         contentType: 'application/json',
         //         // path: 'e2e/mocked_resp.json',
         //     })
