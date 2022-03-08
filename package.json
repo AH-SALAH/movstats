@@ -14,7 +14,8 @@
         "clean": "rimraf .next out",
         "lint": "next lint",
         "build-types": "tsc --noEmit --pretty",
-        "e2e": "playwright test"
+        "e2e": "playwright test",
+        "e2e:debug": "set DEBUG=pw:api && set PWDEBUG=1 && playwright test"
     },
     "dependencies": {
         "@etchteam/next-pagination": "^3.2.0",
