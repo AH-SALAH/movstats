@@ -5,8 +5,8 @@
         "name": "AH-SALAH"
     },
     "engines": {
-        "npm": "11.0.0",
-        "node": "24.0.0"
+        "npm": "11.x",
+        "node": "24.x"
     },
     "scripts": {
         "dev": "next dev",
